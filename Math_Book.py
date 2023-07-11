@@ -7,6 +7,7 @@ from mpl_toolkits.mplot3d import Axes3D
 
 
 def find_critical_points(coefficients, order):
+    
     # Calculate the derivative coefficients
     derivative_coefficients = [coefficients[i] * (order - i) for i in range(order)]
 
