@@ -64,7 +64,11 @@ def plot_function_with_table(coefficients, order):
     plt.tight_layout()
     plt.show()
 
-
+def monotonie():
+    if True:
+        # la fonction est croissante
+        print("")
+        
 def get_function_coefficients():
     def on_click(coefficients):
         try:
