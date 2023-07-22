@@ -28,7 +28,3 @@ You can reach me via email at [francisintegrale@gmail.com] for any questions, su
 
 I hope you enjoy your visit to my GitHub profile and find my projects interesting!
 
-<!---
-FrancisMbagnia/FrancisMbagnia is a ✨ special ✨ repository because its `README.md` (this file) appears on your GitHub profile.
-You can click the Preview link to take a look at your changes.
---->
