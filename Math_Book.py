@@ -25,7 +25,6 @@ def plot_function_with_table_and_comments(coefficients, order):
     y = np.linspace(-10, 10, 100)
     X, Y = np.meshgrid(x, y)
     Z = evaluate_function(coefficients, order, X)
-
     critical_points = find_critical_points(coefficients, order)
     df = pd.DataFrame(critical_points, columns=['x', 'f(x)'])
 
@@ -122,6 +121,7 @@ def generate_monotonicity_comments(intervals):
 
 
 # Example Usage
+
 order = int(input("Enter the order N of the function (N < 10): "))
 
 coefficients = []
