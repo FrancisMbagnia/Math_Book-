@@ -5,21 +5,21 @@ import pandas as pd
 import matplotlib.pyplot as plt
 from mpl_toolkits.mplot3d import Axes3D
 
-
+# Find Critical points
 def find_critical_points(coefficients, order):
     derivative_coefficients = [coefficients[i] * (order - i) for i in range(order)]
     roots = np.roots(derivative_coefficients)
     critical_points = [(root, evaluate_function(coefficients, order, root)) for root in roots]
     return critical_points
 
-
+# Function
 def evaluate_function(coefficients, order, x):
     result = 0
     for i in range(order + 1):
         result += coefficients[i] * x ** (order - i)
     return result
 
-
+# Plot
 def plot_function_with_table_and_comments(coefficients, order):
     x = np.linspace(-10, 10, 100)
     y = np.linspace(-10, 10, 100)
@@ -61,7 +61,7 @@ def plot_function_with_table_and_comments(coefficients, order):
     plt.tight_layout()
     plt.show()
 
-
+# Get function coefficients
 def get_function_coefficients():
     def on_click(coefficients):
         try:
@@ -87,7 +87,7 @@ def get_function_coefficients():
 
     root.mainloop()
 
-
+# Calculate intervals
 def calculate_intervals(coefficients, order):
     derivative_coefficients = [coefficients[i] * (order - i) for i in range(order)]
 
@@ -105,7 +105,7 @@ def calculate_intervals(coefficients, order):
 
     return intervals
 
-
+# Monotonicity
 def generate_monotonicity_comments(intervals):
     comments = []
     for interval in intervals:
