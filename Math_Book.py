@@ -12,14 +12,14 @@ def find_critical_points(coefficients, order):
     critical_points = [(root, evaluate_function(coefficients, order, root)) for root in roots]
     return critical_points
 
-# Function
+# Create Function
 def evaluate_function(coefficients, order, x):
     result = 0
     for i in range(order + 1):
         result += coefficients[i] * x ** (order - i)
     return result
 
-# Plot
+# Plot Function
 def plot_function_with_table_and_comments(coefficients, order):
     x = np.linspace(-10, 10, 100)
     y = np.linspace(-10, 10, 100)
