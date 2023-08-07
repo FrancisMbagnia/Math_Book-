@@ -6,6 +6,7 @@ import matplotlib.pyplot as plt
 from mpl_toolkits.mplot3d import Axes3D
 
 # Find Critical points
+
 def find_critical_points(coefficients, order):
     derivative_coefficients = [coefficients[i] * (order - i) for i in range(order)]
     roots = np.roots(derivative_coefficients)
@@ -13,6 +14,7 @@ def find_critical_points(coefficients, order):
     return critical_points
 
 # Create Function
+
 def evaluate_function(coefficients, order, x):
     result = 0
     for i in range(order + 1):
@@ -20,6 +22,7 @@ def evaluate_function(coefficients, order, x):
     return result
 
 # Plot Function
+
 def plot_function_with_table_and_comments(coefficients, order):
     x = np.linspace(-10, 10, 100)
     y = np.linspace(-10, 10, 100)
@@ -62,6 +65,7 @@ def plot_function_with_table_and_comments(coefficients, order):
     plt.show()
 
 # Get function coefficients
+
 def get_function_coefficients():
     def on_click(coefficients):
         try:
@@ -88,6 +92,7 @@ def get_function_coefficients():
     root.mainloop()
 
 # Calculate intervals
+
 def calculate_intervals(coefficients, order):
     derivative_coefficients = [coefficients[i] * (order - i) for i in range(order)]
 
@@ -107,6 +112,7 @@ def calculate_intervals(coefficients, order):
 
 # Monotonicity
 def generate_monotonicity_comments(intervals):
+
     comments = []
     for interval in intervals:
         if interval[0] == 0:
