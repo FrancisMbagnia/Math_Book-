@@ -65,7 +65,6 @@ def plot_function_with_table_and_comments(coefficients, order):
     plt.show()
 
 # Get function coefficients
-
 def get_function_coefficients():
     def on_click(coefficients):
         try:
@@ -92,7 +91,6 @@ def get_function_coefficients():
     root.mainloop()
 
 # Calculate intervals
-
 def calculate_intervals(coefficients, order):
     derivative_coefficients = [coefficients[i] * (order - i) for i in range(order)]
 
@@ -127,7 +125,6 @@ def generate_monotonicity_comments(intervals):
 
 
 # Example Usage
-
 order = int(input("Enter the order N of the function (N < 10): "))
 
 coefficients = []
