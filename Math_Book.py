@@ -135,3 +135,10 @@ if len(coefficients) != order + 1:
     exit()
 
 plot_function_with_table_and_comments(coefficients, order)
+
+
+# Example Usage
+#order = int(input("Enter the order N of the function (N < 10): "))
+
+#coefficients = []
+#get_function_coefficients()
