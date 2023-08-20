@@ -122,10 +122,50 @@ def generate_monotonicity_comments(intervals):
         comments.append(comment)
     return "\n".join(comments)
 
+# Rationals Functions
+def plot_rational_function():
+    order_n = int(input("Enter the order N of the numerator function (N < 10): "))
+    order_d = int(input("Enter the order N of the denominator function (N < 10): "))
+
+    coefficients_n = []
+    coefficients_d = []
+
+    print("Enter coefficients for the numerator function:")
+    get_function_coefficients(coefficients_n, order_n)
+
+    print("Enter coefficients for the denominator function:")
+    get_function_coefficients(coefficients_d, order_d)
+
+    x = np.linspace(-10, 10, 100)
+    y = np.linspace(-10, 10, 100)
+    X, Y = np.meshgrid(x, y)
+    Z_n = evaluate_function(coefficients_n, order_n, X)
+    Z_d = evaluate_function(coefficients_d, order_d, X)
+    Z = Z_n / Z_d
+
+    plt.figure(figsize=(10, 6))
+
+    plt.subplot(121)
+    plt.plot(x, Z_n, label="Numerator")
+    plt.plot(x, Z_d, label="Denominator")
+    plt.xlabel('x')
+    plt.ylabel('f(x)')
+    plt.title('Numerator and Denominator Functions')
+    plt.legend()
+
+    plt.subplot(122)
+    plt.plot(x, Z, label="N(x)/D(x)")
+    plt.xlabel('x')
+    plt.ylabel('f(x)')
+    plt.title('Rational Function')
+    plt.legend()
+
+    plt.tight_layout()
+    plt.show()
 
 
 # Example Usage
-order = int(input("Enter the order N of the function (N < 10): "))
+order = int(input("Enter the order N of the function (N < ∞): "))
 
 coefficients = []
 get_function_coefficients()
@@ -137,8 +177,5 @@ if len(coefficients) != order + 1:
 plot_function_with_table_and_comments(coefficients, order)
 
 
-# Example Usage
-#order = int(input("Enter the order N of the function (N < 10): "))
-
-#coefficients = []
-#get_function_coefficients()
+# Plot for rationals functions
+#plot_rational_function()
